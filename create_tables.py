@@ -18,7 +18,8 @@ def create_database(config, defaultdb="'postgres'"):
     cur = conn.cursor()
     _dbname = dbname[1:-1]
     cur.execute(f"drop database if exists {_dbname};")
-    cur.execute(f"create database {_dbname} with encoding 'utf8' template template0;")
+    cur.execute(f"create database {_dbname} with encoding 'utf8'"
+                " template template0;")
     conn.close()
 
     # Connect to the created database.
