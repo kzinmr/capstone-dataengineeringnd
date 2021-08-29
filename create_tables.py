@@ -4,9 +4,14 @@ from sql_queries import create_table_queries, drop_table_queries
 
 
 def create_database(config, defaultdb="'postgres'"):
-    """
-    - Creates and connects to the sparkifydb
-    @return: cursor and connection to sparkifydb
+    """Creates and connects to the new database.
+    Args:
+        config: Configuration of the DB environment.
+        defaultdb: The default database name initially logged in.
+    Returns:
+        cur: SQL cursor object to the created DB.
+        conn: DB connection object to the created DB.
+    Raises:
     """
 
     host, dbname, user, password, port = config["LOCAL"].values()
